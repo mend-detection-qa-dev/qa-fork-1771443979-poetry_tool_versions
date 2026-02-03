@@ -7,12 +7,11 @@ authors = ["Test <test@example.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 # CRITICAL: These package versions have VULNERABILITIES and require Python >=3.9 or >=3.11
-# numpy 1.26.x genuinely dropped Python 3.8 support
-# Other packages use markers to simulate version-specific dependency resolution
-numpy = {version = "==1.26.0", markers = "python_version >= '3.9'"}  # Requires Python >=3.9 (REAL incompatibility with 3.8)
-pillow = {version = "==10.0.0", markers = "python_version >= '3.11'"}  # CVE-2023-50447 - Pillow 10.x requires Python >=3.8, but we restrict to 3.11 via marker
-cryptography = {version = "==41.0.0", markers = "python_version >= '3.11'"}  # CVE-2023-49083 - NULL pointer dereference
-httpx = {version = "==0.23.0", markers = "python_version >= '3.11'"}  # CVE-2023-37276 - Improper handling of redirects
+numpy = "==1.26.0"
+pillow = "==10.0.0"
+cryptography = "==41.0.0"
+httpx = "==0.23.0"
+
 
 [build-system]
 requires = ["poetry-core"]
